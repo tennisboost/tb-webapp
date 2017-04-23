@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700');
+
+@font: 'Roboto';
+
+@green: #3ECF8E;
+@purple: #615FF6;
+@cloud: #F1F3F5;
+@white: #EEEEEE;
+@blue: #3C4858;
+@steel: #232633;
+
+h1,h2,h3,h4,h5,h6,a,p {
+  font-family: @font, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #3297D3;
+  &:hover {
+    color: #424770;
+  }
+}
+
+body {
+  background: @cloud;
+}
+
+::selection {
+  background: @purple;
+  color: @cloud;
+}

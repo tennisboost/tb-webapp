@@ -1,0 +1,105 @@
+@import "presets";
+
+body {
+  background: linear-gradient(to right, #1d976c, @green);
+  min-height: 100vh;
+}
+
+.logo {
+  padding: 10px 20% 30px;
+}
+
+b {
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.sep {
+  height: 15vh;
+}
+
+.auth-card {
+  z-index: 100;
+  background: @cloud;
+  box-shadow: 0 3px 6px 1px rgba(0,0,0,.08), 0 7px 14px 1px rgba(50,50,93,.1);
+  border-radius: 4px;
+  padding: 15px;
+  //height: 500px;
+  margin: 0 auto 12px;
+  color: @steel;
+}
+
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+
+input[type=email], input[type=password] {
+  padding: 30px 30px;
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  transition: all .15s ease;
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    transform: translateY(-2px);
+  }
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+}
+
+// ===== THIS STUFF IS ALL REPEATED!!! =====
+// TODO: remove repetitions...
+
+label {
+  font-weight: 600;
+  color: @purple;
+}
+.authBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 0 14px;
+  height: 40px;
+  font-size: 15px;
+  line-height:40px;
+  background: @green;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  text-transform: uppercase;
+  transition: all .15s ease;
+  letter-spacing: .025em;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1px);
+    outline: none;
+  }
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.forgot {
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: @purple;
+  &:hover {
+    text-decoration: underline;
+  }
+}

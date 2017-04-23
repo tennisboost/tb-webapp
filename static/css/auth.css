@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #3297D3;
+}
+a:hover {
+  color: #424770;
+}
+body {
+  background: #F1F3F5;
+}
+::selection {
+  background: #615FF6;
+  color: #F1F3F5;
+}
+body {
+  background: linear-gradient(to right, #1d976c, #3ECF8E);
+  min-height: 100vh;
+}
+.background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.logo {
+  padding: 10px 20% 30px;
+}
+b {
+  border-radius: 50%;
+  z-index: -1;
+}
+.sep {
+  height: 15vh;
+}
+.auth-card {
+  z-index: 100;
+  background: #F1F3F5;
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.08), 0 7px 14px 1px rgba(50, 50, 93, 0.1);
+  border-radius: 4px;
+  padding: 15px;
+  margin: 0 auto 12px;
+  color: #232633;
+}
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+input[type=email],
+input[type=password] {
+  padding: 30px 30px;
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all .15s ease;
+}
+input[type=email]:focus,
+input[type=password]:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+input[type=email]:hover,
+input[type=password]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+label {
+  font-weight: 600;
+  color: #615FF6;
+}
+.authBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 0 14px;
+  height: 40px;
+  font-size: 15px;
+  line-height: 40px;
+  background: #3ECF8E;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+  transition: all .15s ease;
+  letter-spacing: .025em;
+  border: none;
+  cursor: pointer;
+}
+.authBtn:hover {
+  color: white;
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+.authBtn:active {
+  transform: translateY(1px);
+  outline: none;
+}
+.btn-container {
+  text-align: center;
+}
+.forgot {
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #615FF6;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=auth.css.map */

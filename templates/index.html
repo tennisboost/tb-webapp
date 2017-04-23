@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennisboost</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+
+<div class="row wrapper">
+
+    <div class="sidebar small-2 medium-3 large-2 columns">
+      <div class="sidebar-wrapper">
+
+        <div class="logo hide-for-small-only">
+          <img src="{{ url_for('static', filename='assets/tennisboost_logo.png') }}" />
+        </div>
+
+        <ul class='sidebar-nav'>
+          <li>
+            <a href="/index.html">
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-home" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Complete Tennis Bowral</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-trophy" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Competitions</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class='disabled' >
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-user" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Members <span class='soonTag'>Coming Soon</span></p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-cog" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Settings</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-life-ring" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Help</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="item-wrap">
+                <i class="sidebar-icon fa fa-sign-out" aria-hidden="true"></i>
+                <p class='hide-for-small-only'>Sign Out</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="content small-10 medium-9 large-10 columns">
+      <div class="sep"></div>
+      <div class="row">
+        <div class="small-11 card compCard">
+          <h3>Complete Tennis Bowral</h3>
+          <table id='compTable'>
+            <thead>
+              <tr>
+                <th>Competition</th>
+                <th>Players</th>
+                <th>Comp Type</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><a href=''>Thursday Night Men's Singles</a></td>
+                <td>22</td>
+                <td>Single Elimination</td>
+              </tr>
+              <tr>
+                <td><a href=''>Mixed Doubles</a></td>
+                <td>16</td>
+                <td>Round Robin</td>
+              </tr>
+              <tr>
+                <td><a href=''>Junior's Saturday Morning Mini Comp</a></td>
+                <td>32</td>
+                <td>Round Robin</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="newComp btn-container">
+            <a href="#" class="btn white"><i class='fa fa-plus'></i> New Comp</a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="small-11 card">
+          <h3>New Competition</h3>
+          <div class="row">
+            <div class="small-11 medium-9 large-6 small-centered">
+              <label for="name">Competition Name</label>
+              <input id='compName' type="text" name="name" placeholder="Something snazzy, like 'Thursday Night Singles'">
+              <label for="singles">Singles Or Doubles</label>
+              <input type="radio" name="singlesDoubles" value="singles" id='singlesSingles' checked> <label class='inline' for="singlesSingles">Singles</label>
+              <input type="radio" name="singlesDoubles" value="doubles" id='singlesDoubles'> <label class='inline' for="singlesDoubles">Doubles</label>
+              <input type="radio" name="singlesDoubles" value="both" id='singlesBoth'> <label class='inline' for="singlesBoth"><a href="#" class='mexico' data-src='./assets/why-not-both-girl.gif' >Singles and Doubles</a></label>
+              <label for="type">Competition Type</label>
+              <select name="type">
+                <option value="poolDraws">Pool Draws</option>
+                <option value="roundRobin">Round Robin</option>
+                <option value="singleElim">Single Elimination Tournament</option>
+                <option value="doubleElim">Double Elimination Tournament</option>
+                <option value="nsew">North-South-East-West</option>
+              </select>
+              <label for="addPlayer">Add Players</label>
+              <input type="text" name="addPlayer" placeholder="Roger Federer">
+              <div class="newPlayerField"></div> <!-- used to specify where the new field appears on click -->
+              <div class="addBtns">
+                <button class='button small' type="button" name="addPlayerBtn" id='addPlayerBtn'><i class="fa fa-plus" aria-hidden="true"></i> Add Player</button>
+              </div>
+            </div>
+            <div class="btn-container">
+              <a id='createComp' href="#" class="btn">Create Comp</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <footer class='small-centered small-10 medium-9 large-10'>
+        <p>&copy; 2017 Tennisboost | We &#10084; Tennis | <span class='alpha-label'>Alpha v0.1.0</span></p>
+      </footer>
+    </div>
+
+  </div> <!--/row-->
+
+  <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/what-input.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/foundation.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/Giflinks.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vendor/moment.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

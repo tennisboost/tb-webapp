@@ -90,3 +90,7 @@ ENV/
 
 # Codekit configuration
 config.codekit3
+
+# Peewee Sqlite3 databases
+test.db
+peewee.db

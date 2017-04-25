@@ -58,6 +58,24 @@ $('#createComp').click(function () {
   }
   console.log(JSON.stringify(jsonToSend))
 
+  // $.getJSON(
+  //   '/newComp',
+  //   jsonToSend,
+  //   function(data) {
+  //     // callback
+  //   })
+  $.ajax({
+    url: "/newComp",
+    type: "POST",
+    contentType: "application/json",
+    //dataType: 'json', // this is the response we're getting back!
+    data: JSON.stringify(jsonToSend, null, '\t')
+  }).done(function(data){
+    console.log(data)
+  })
+
+  console.log("---> Sent Data")
+
   // TODO: POST jsonToSend to server and redirect
 })
 

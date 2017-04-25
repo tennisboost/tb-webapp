@@ -14,3 +14,5 @@ class Comp(Model):
     singlesDoubles = CharField()
     # scores = hmmmm unfortunately only PostgreSQL provides ArrayField or JSONField functionality... hence we might have to switch to it.
     # I'm too tired to implement that right at this moment...
+    # http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#ArrayField
+    # players = arrayField probs

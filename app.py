@@ -13,7 +13,8 @@ def login():
 @app.route('/newComp', methods=['POST'])
 def newComp():
     data = request.json
-    print(data)
+    print(data['compName'])
+    print(data['players'][0])
     return 'did something'
 
 if __name__ == '__main__':

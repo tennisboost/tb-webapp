@@ -58,12 +58,6 @@ $('#createComp').click(function () {
   }
   console.log(JSON.stringify(jsonToSend))
 
-  // $.getJSON(
-  //   '/newComp',
-  //   jsonToSend,
-  //   function(data) {
-  //     // callback
-  //   })
   $.ajax({
     url: "/newComp",
     type: "POST",

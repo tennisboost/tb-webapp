@@ -125,7 +125,7 @@
               <label for="singles">Singles Or Doubles</label>
               <input type="radio" name="singlesDoubles" value="singles" id='singlesSingles' checked> <label class='inline' for="singlesSingles">Singles</label>
               <input type="radio" name="singlesDoubles" value="doubles" id='singlesDoubles'> <label class='inline' for="singlesDoubles">Doubles</label>
-              <input type="radio" name="singlesDoubles" value="both" id='singlesBoth'> <label class='inline' for="singlesBoth"><a href="#" class='mexico' data-src='./assets/why-not-both-girl.gif' >Singles and Doubles</a></label>
+              <input type="radio" name="singlesDoubles" value="both" id='singlesBoth'> <label class='inline' for="singlesBoth"><a href="#" class='mexico' data-src='{{url_for("static", filename="assets/why-not-both-girl.gif")}}' >Singles and Doubles</a></label>
               <label for="type">Competition Type</label>
               <select name="type">
                 <option value="poolDraws">Pool Draws</option>
@@ -143,6 +143,9 @@
             </div>
             <div class="btn-container">
               <a id='createComp' href="#" class="btn">Create Comp</a>
+            </div>
+            <div class="callbackData">
+              <!-- Pass the callback data in -->
             </div>
 
           </div>

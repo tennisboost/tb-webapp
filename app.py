@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for, redirect, request
 import functions
 import json
 
+import models
+
 app = Flask(__name__)
 # For development
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 3
@@ -42,4 +44,5 @@ def comp(compHash, processed):
     return render_template('comp.html', rounds=rounds)
 
 if __name__ == '__main__':
+    models.init()
     app.run(host='0.0.0.0', port=8000, debug=True)

@@ -12,5 +12,16 @@
 
 <p>Use <code>pip3 install -r requirements.txt</code> to install all packages into (preferably) a <a href="https://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/">virtualenv</a></p>
 
+<h2 id="settingupthedatabase">Setting up the database</h2>
+
+<p>You need to set up a postgres database. Use postgres.app as a GUI interface and click <code>start server</code>.</p>
+
+<p>You then need to create the database:
+<code>$ psql</code>
+<code># CREATE DATABASE tboost OWNER &lt;your_username&gt;</code>
+(<code>$</code> and <code>#</code> denote terminal tags)</p>
+
+<p>Ensure that your_username is also defined in models.py as the user you are connecting to.</p>
+
 </body>
 </html>

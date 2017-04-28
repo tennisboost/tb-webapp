@@ -67,7 +67,8 @@ $('#createComp').click(function () {
   }).done(function(data){
     // HACK: needs to redirect and store data rather than do this shit...
     console.log(data)
-    $('.content').append('<div class="row"><div class="card small-11"><p>'+data+'</p></div></div>')
+    //$('.content').append('<div class="row"><div class="card small-11"><p>'+data+'</p></div></div>')
+    window.location = 'http://' + window.location.host + '/comp/' + data;
 
   })
 

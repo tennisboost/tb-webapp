@@ -59,7 +59,7 @@ $('#createComp').click(function () {
   console.log(JSON.stringify(jsonToSend))
 
   $.ajax({
-    url: "/newComp",
+    url: "/createComp",
     type: "POST",
     contentType: "application/json",
     //dataType: 'json', // this is the response we're getting back!
@@ -67,8 +67,8 @@ $('#createComp').click(function () {
   }).done(function(data){
     // HACK: needs to redirect and store data rather than do this shit...
     console.log(data)
-    //$('.content').append('<div class="row"><div class="card small-11"><p>'+data.rounds[0][0][0]+'</p></div></div>')
     $('.content').append('<div class="row"><div class="card small-11"><p>'+data+'</p></div></div>')
+
   })
 
   console.log("---> Sent Data")

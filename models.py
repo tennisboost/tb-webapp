@@ -1,4 +1,5 @@
 from peewee import *
+from app import hashids
 #from playhouse.postgres_ext import *
 
 import psycopg2
@@ -35,6 +36,9 @@ class Comp(Model):
             comp_type = comp_type,
             singlesDoubles = singlesDoubles
         )
+
+    def getHash(self):
+        return hashids.encode(self.id)
 
 def init():
     db.connect()

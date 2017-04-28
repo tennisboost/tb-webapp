@@ -14,4 +14,4 @@ You then need to create the database:
 `# CREATE DATABASE tboost OWNER <your_username>`
 (`$` and `#` denote terminal tags)
 
-Ensure that your_username is also defined in models.py as the user you are connecting to.
+Ensure that your_username is also defined in `models.py` as the user you are connecting to.

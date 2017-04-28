@@ -28,6 +28,14 @@ class Comp(Model):
     class Meta:
         database = db
 
+    @classmethod
+    def create_comp(cls, name, comp_type, singlesDoubles):
+        cls.create(
+            name = name,
+            comp_type = comp_type,
+            singlesDoubles = singlesDoubles
+        )
+
 def init():
     db.connect()
     db.create_tables([UserAccount, Comp], safe=True)

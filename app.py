@@ -23,17 +23,22 @@ def login():
 @app.route('/newComp', methods=['POST'])
 def newComp():
     data = request.json
+    models.Comp.create(
+        name = data['compName'],
+        comp_type = data['type'],
+        singlesDoubles = data['singlesDoubles']
+    )
     # print(data['compName'])
     # print(data['players'][0])
-    processed = functions.fourDoublesReturn(data)
-    print(processed)
-    print('=====')
-    print(processed['rounds'][0])
+    # processed = functions.fourDoublesReturn(data)
+    # print(processed)
+    # print('=====')
+    # print(processed['rounds'][0])
     # TODO: store info and hash in model
 
     # NOTE: we can do this two ways:
     # 1. return json and handle display in js --> this is more scalable for interactivity later on
-    return json.dumps(processed)
+    return 'Created!'#json.dumps(processed)
     # 2. render new flask page --> this is easier
 
     #return redirect(url_for('comp', compHash=0)) # TODO: compHash should be retrieved from the model, processed shouldn't be passed

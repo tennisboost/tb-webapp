@@ -1,10 +1,11 @@
 from peewee import *
 from app import hashids
-#from playhouse.postgres_ext import *
+from playhouse.postgres_ext import *
 
 import psycopg2
 
-db = PostgresqlDatabase('tboost', user='tomhill')
+#db = PostgresqlDatabase('tboost', user='tomhill')
+db = PostgresqlExtDatabase('tboost', user='tomhill') #NOTE TO SELF: To use ArrayField you must `CREATE EXTENSION hstore in psql`
 
 # Note models should be named the singular, not plural
 class UserAccount(Model):
@@ -23,8 +24,9 @@ class Comp(Model):
     # scores = hmmmm unfortunately only PostgreSQL provides ArrayField or JSONField functionality... hence we might have to switch to it.
     # I'm too tired to implement that right at this moment...
     # http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#ArrayField
-    #players = ArrayField(CharField)
-    #scores = ArrayField(CharField)
+    players = ArrayField(CharField)
+    rounds = ArrayField(CharField)
+    scores = ArrayField(IntegerField)
 
     class Meta:
         database = db

@@ -37,31 +37,34 @@ def newComp():
 @app.route('/createComp', methods=['POST'])
 def createComp():
     data = request.json
+    if data['type'] == 'poolDraws':
+        if data['singlesDoubles'] == 'doubles':
+            rounds = functions.fourDoublesReturn(data['players'])
+        elif data['singlesDoubles'] == 'singles':
+            rounds = functions.fourSinglesReturn(data['players'])
+
     comp = models.Comp(
         name = data['compName'],
         comp_type = data['type'],
-        singlesDoubles = data['singlesDoubles']
+        singlesDoubles = data['singlesDoubles'],
+        players = data['players'],
+        rounds = rounds,
+        scores = []
+        #scores = [1,2,3,4]
     )
     comp.save()
-    # print(data['compName'])
-    # print(data['players'][0])
-    # processed = functions.fourDoublesReturn(data)
-    # print(processed)
-    # print('=====')
-    # print(processed['rounds'][0])
-    # TODO: store info and hash in model
-
-    # NOTE: we can do this two ways:
-    # 1. return json and handle display in js --> this is more scalable for interactivity later on
-    return str(comp.getHash()) #json.dumps(processed)
-    # 2. render new flask page --> this is easier
-
-    #return redirect(url_for('comp', compHash=0)) # TODO: compHash should be retrieved from the model, processed shouldn't be passed
+    print(data['players'])
+    return str(comp.getHash())
 
 @app.route('/comp/<compHash>')
 def comp(compHash):
     #rounds = processed['rounds'] # HACK: should either be stored or generated here!
     comp = models.Comp.get(models.Comp.id == hashids.decode(compHash))
+    # players = (BlogPost
+    #             .select(BlogPost.tags[0].alias('first_tag'))
+    #             .where(BlogPost.id == 1)
+    #             .dicts()
+    #             .get())
     return render_template('comp.html', comp=comp)
 
 if __name__ == '__main__':

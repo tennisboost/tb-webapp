@@ -56,37 +56,37 @@ def fourDoublesReturn(pool):
     """Takes a pool of n (where n % 4 == 0) players as DICT and returns DICT 'rounds' with doubles matchups"""
     # used to decode JSON then call fourDoubles method
     i = 0
-    x = int(((len(pool['players'])) / 4)) ### can work with any number of players where n%4=0
+    x = int( len(pool) / 4 ) ### can work with any number of players where n%4=0
     matchUp = []
     for y in range(x):
-        matchUp += fourDoubles((pool['players'][i]), (pool['players'][i + 1]), (pool['players'][i + 2]),
-                               (pool['players'][i + 3]))
+        matchUp += fourDoubles( (pool[i]), (pool[i + 1]), (pool[i + 2]), (pool[i + 3]) )
         i += 4
-    return {'rounds': matchUp}
+    print('========')
+    print(matchUp)
+    print('========')
+    return matchUp
 
 def fourSinglesReturn(pool):
-    """Takes a pool of n (where n % 4 == 0) players as DICT and returns DICT 'rounds' with singles matchups"""
+    """Takes a pool of n (where n % 4 == 0) players as LIST and returns LIST 'rounds' with singles matchups"""
     #used to decode JSON then call fourDoublesSingles method
     i = 0
-    x = int(((len(pool['players'])) / 4)) ### can work with any number of players where n%4=0
+    x = int(((len(pool)) / 4)) ### can work with any number of players where n%4=0
     matchUp = []
     for y in range(x):
-        matchUp += fourDoublesSingles((pool['players'][i]), (pool['players'][i + 1]), (pool['players'][i + 2]),
-                               (pool['players'][i + 3]))
+        matchUp += fourDoublesSingles((pool[i]), (pool[i + 1]), (pool[i + 2]), (pool[i + 3]))
         i += 4
-    return {'rounds': matchUp}
+    return matchUp
 
 def sixSinglesReturn(pool):
-    """Takes a pool of n (where n % 6 == 0) players as DICT and returns DICT 'rounds' with singles matchups"""
+    """Takes a pool of n (where n % 6 == 0) players as LIST and returns LIST 'rounds' with singles matchups"""
     #used to decode JSON then call sixDoublesSingles method
     i = 0
-    x = int(((len(pool['players'])) / 6)) ### can work with any number of players where n%6=0
+    x = int(((len(pool)) / 6)) ### can work with any number of players where n%6=0
     matchUp = []
     for y in range(x):
-        matchUp += sixDoublesSingles((pool['players'][i]), (pool['players'][i + 1]), (pool['players'][i + 2]),
-                               (pool['players'][i + 3]), (pool['players'][i + 4]), (pool['players'][i + 5]))
+        matchUp += sixDoublesSingles((pool[i]), (pool[i + 1]), (pool[i + 2]), (pool[i + 3]), (pool[i + 4]), (pool[i + 5]))
         i += 6
-    return {'rounds': matchUp}
+    return matchUp
 
 
 # # this function is a replacement for the above 3 functions

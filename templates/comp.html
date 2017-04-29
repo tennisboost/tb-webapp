@@ -6,6 +6,27 @@
     <h3>Competition</h3>
     <div class="row">
       <p>{{ comp.name }}</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for player in comp.players %}
+          <tr>
+            <td>{{ player }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+
+      </table>
+      {% for round in comp.rounds %}
+      <div class="round">
+        <p>{{round}}</p>
+      </div>
+
+      {% endfor %}
     </div>
   </div>
 </div>

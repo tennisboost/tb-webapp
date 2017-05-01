@@ -1,4 +1,5 @@
 import json
+from itertools import combinations
 
 ######
 #
@@ -11,7 +12,8 @@ import json
 # returns DICT of rounds
 #####
 
-
+def fourSingles(player1 , player2, player3, player4):
+    return list(combinations([player1, player2, player3, player4],2))
 
 def fourDoubles(player1 , player2, player3, player4):
     """Takes a pool of 4 players rounds with doubles matchups"""
@@ -73,7 +75,7 @@ def fourSinglesReturn(pool):
     x = int(((len(pool)) / 4)) ### can work with any number of players where n%4=0
     matchUp = []
     for y in range(x):
-        matchUp += fourDoublesSingles((pool[i]), (pool[i + 1]), (pool[i + 2]), (pool[i + 3]))
+        matchUp += fourSingles((pool[i]), (pool[i + 1]), (pool[i + 2]), (pool[i + 3]))
         i += 4
     return matchUp
 
